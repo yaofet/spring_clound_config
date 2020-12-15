@@ -1,0 +1,11 @@
+spring:
+  rabbitmq:
+    username: guest
+    password: guest
+    template:
+      receive-timeout: 30000
+#    virtual-host: my_vhost
+#    addresses: 192.168.1.29:15672,192.168.1.39:15672,192.168.1.49:15672
+    addresses: 127.0.0.1:5672
+server:
+  port: 8888

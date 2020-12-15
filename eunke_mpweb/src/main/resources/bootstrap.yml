@@ -1,0 +1,28 @@
+server:
+  port: 8089
+
+#spring:
+#  profiles:
+#    active: dev
+
+#环境可以选择切换，只需要修改 spring.profiles.active值即可, 默认为测试环境
+spring:
+  profiles: dev
+  cloud:
+    bootstrap:
+      enabled: false
+    config:
+      uri: http://localhost:8888
+      name: eunke-configweb
+      profile: dev
+
+
+#手动刷新配置用
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health
+        include: '*'
+    refresh:
+      enabled: true

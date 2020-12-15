@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  profiles: dev
+  application:
+    name: eunke-configweb
+  cloud:
+    config:
+      server:
+        git:
+          # 配置git仓库地址
+          uri: git@github.com:yaofet/spring_config.git
+          # 访问git仓库的用户名
+          username: yaofet
+          # 访问git仓库的用户密码 如果Git仓库为公开仓库，可以不填写用户名和密码，如果是私有仓库需要填写
+          password: xuyaohui19940428
+          #支持带{application}和{profile}（{label}如果需要）占位符的搜索路径
+          search-paths: '{application}'
+      # 配置仓库的分支,可不配
+      label: master
